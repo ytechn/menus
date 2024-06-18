@@ -4,4 +4,4 @@ requests
 elasticsearch
 pandas
 logstash-formatter
-pymongo
+pymongo[srv]==3.6
