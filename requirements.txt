@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+requests
+elasticsearch
+pandas
+logstash-formatter
+pymongo
