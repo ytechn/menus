@@ -1,0 +1,72 @@
+[
+    {
+        "name": "Classic Caesar Salad",
+        "description": "Crisp romaine lettuce with garlic croutons, Parmesan cheese, and Caesar dressing",
+        "ingredients": ["Romaine lettuce", "Garlic croutons", "Parmesan cheese", "Caesar dressing"],
+        "price": 8.99,
+        "is_vegan": false
+    },
+    {
+        "name": "Margherita Pizza",
+        "description": "Traditional Italian pizza topped with fresh mozzarella, tomatoes, and basil",
+        "ingredients": ["Pizza dough", "Fresh mozzarella", "Tomatoes", "Basil"],
+        "price": 12.50,
+        "is_vegan": false
+    },
+    {
+        "name": "Vegan Buddha Bowl",
+        "description": "A nourishing bowl of quinoa, mixed greens, roasted vegetables, and tahini dressing",
+        "ingredients": ["Quinoa", "Mixed greens", "Roasted vegetables", "Tahini dressing"],
+        "price": 10.99,
+        "is_vegan": true
+    },
+    {
+        "name": "Grilled Salmon Fillet",
+        "description": "Fresh Atlantic salmon fillet served with seasonal vegetables and lemon butter sauce",
+        "ingredients": ["Salmon fillet", "Seasonal vegetables", "Lemon butter sauce"],
+        "price": 16.75,
+        "is_vegan": false
+    },
+    {
+        "name": "Caprese Salad",
+        "description": "Slices of fresh mozzarella, ripe tomatoes, and basil drizzled with balsamic glaze",
+        "ingredients": ["Fresh mozzarella", "Tomatoes", "Basil", "Balsamic glaze"],
+        "price": 9.50,
+        "is_vegan": true
+    },
+    {
+        "name": "Penne Arrabbiata",
+        "description": "Penne pasta in a spicy tomato sauce with garlic, chili flakes, and fresh basil",
+        "ingredients": ["Penne pasta", "Tomato sauce", "Garlic", "Chili flakes", "Fresh basil"],
+        "price": 11.25,
+        "is_vegan": true
+    },
+    {
+        "name": "BBQ Bacon Cheeseburger",
+        "description": "Juicy beef patty topped with crispy bacon, cheddar cheese, and BBQ sauce on a sesame seed bun",
+        "ingredients": ["Beef patty", "Bacon", "Cheddar cheese", "BBQ sauce", "Sesame seed bun"],
+        "price": 13.99,
+        "is_vegan": false
+    },
+    {
+        "name": "Mushroom Risotto",
+        "description": "Creamy Arborio rice cooked with mushrooms, Parmesan cheese, and white wine",
+        "ingredients": ["Arborio rice", "Mushrooms", "Parmesan cheese", "White wine"],
+        "price": 14.50,
+        "is_vegan": false
+    },
+    {
+        "name": "Falafel Wrap",
+        "description": "Falafel balls wrapped in pita bread with lettuce, tomatoes, cucumbers, and tahini sauce",
+        "ingredients": ["Falafel", "Pita bread", "Lettuce", "Tomatoes", "Cucumbers", "Tahini sauce"],
+        "price": 9.75,
+        "is_vegan": true
+    },
+    {
+        "name": "Tiramisu",
+        "description": "Classic Italian dessert made with layers of coffee-soaked ladyfingers and mascarpone cheese",
+        "ingredients": ["Ladyfingers", "Mascarpone cheese", "Coffee", "Cocoa powder"],
+        "price": 6.99,
+        "is_vegan": false
+    }
+]
