@@ -1,55 +1,47 @@
-import collections
-from collections import abc
+import logging
+import os
 
-# TODO remove collections trash
-# TODO Consider moving to python 3.9 or 3.11
+import requests
+import ollama
 
-collections.Iterable = collections.abc.Iterable
-collections.Mapping = collections.abc.Mapping
-collections.MutableSet = collections.abc.MutableSet
-collections.MutableMapping = collections.abc.MutableMapping
-collections.Sequence = collections.abc.Sequence
+from fastapi import FastAPI, Request
+from fastapi.responses import RedirectResponse
 
-
-
+from logging.handlers import SocketHandler
+from logstash_formatter import LogstashFormatterV1
 from pymongo.mongo_client import MongoClient
-url = "mongourl"
+
 
 # Create a new client and connect to the server
-client = MongoClient(uri)
+client = MongoClient("your mongo url ")
+db = client["menu-app"]
+collection = db['menu']
 
-# Send a ping to confirm a successful connection
-try:
-    client.admin.command('ping')
-    print("Pinged your deployment. You successfully connected to MongoDB!")
-except Exception as e:
-    print(e)
+app = FastAPI()
+
+@app.get("/health_check")
+def health_check(r: Request):
+    return "healthy"
 
 
 
-# import logging
-# import os
 
-# from link_shortener import LinkShortener
-# from fastapi import FastAPI, Request
-# from fastapi.responses import RedirectResponse
+@app.get("/recommend")
+def recommend():
+    criteria = collection.find({})
+    menu_items = list(criteria)
+    prompt = f"I am a vegiterian what can I eat under $200 (choose 1) this is the menu: {str(menu_items)} thanks"
+    
 
-# from logging.handlers import SocketHandler
-# from logstash_formatter import LogstashFormatterV1
+    response = ollama.chat(model='llama3', messages=[
+        {
+            'role': 'user',
+            'content': prompt,
+        },
+    ])
 
-# LOGSTASH_HOST = os.getenv("LOGSTASH_HOST")
-# LOGSTASH_PORT = int(os.getenv("LOGSTASH_PORT"))
+    return {
+        "message": response['message']['content']
+    }
 
-# logging.basicConfig(level=logging.INFO)
-# logger = logging.getLogger(__name__)
-
-# logstash_handler = SocketHandler(LOGSTASH_HOST, LOGSTASH_PORT)
-# logstash_handler.setFormatter(LogstashFormatterV1)
-# logger.addHandler(logstash_handler)
-
-# app = FastAPI()
-
-# @app.get("/health_check")
-# def health_check(r: Request):
-#     return "healthy"
 
